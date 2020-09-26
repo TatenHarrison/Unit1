@@ -1,17 +1,32 @@
 package app;
 
+import java.util.Scanner;
 public class App {
     public static void main(String[] args) throws Exception {
-        System.out.println("the shrekoning");
-        System.out.println("killer bean");
-        System.out.println("the wasp movie");
-        System.out.println("shrek 5");
-        System.out.println("The terrible Super Mario Movie");
-        System.out.println("The Mega Blox movie");
-        System.out.println("Titanic 2");
-        System.out.println("Atlantic rim");
-        System.out.println("Departure");
-        System.out.println("The first Jedi");
 
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("enter a color");
+        String color = input.nextLine();
+
+        System.out.println("enter a number");
+        int number = input.nextInt();
+
+        int count = 0;
+
+    
+        while (count < number) {
+            System.out.println("the count is " + count);
+            count = count + 1;
+        }
+
+        System.out.println("count finished");
+
+        while (color == "red"){
+            System.out.println("the color is " + color);
+            color = "green";
+        }
+
+        System.out.println("color finished");
     }
 }
