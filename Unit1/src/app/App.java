@@ -1,30 +1,36 @@
 package app;
-import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) throws Exception {
+        boolean beeMovie = false;
+        byte fingers = 9;
+        char shrek = 'S';
+        short seconds = 3600;
+        int cookies = 19000;
+        long cookies2 = 1900000000;
+        double twentyFivePercent = 0.25;
+        double oneDividedBy3Extended = 0.3333333333;
 
-        Scanner input = new Scanner(System.in);
+        System.out.println("Do I own a copy of the bee movie?");
+        System.out.println(beeMovie);
+        System.out.println("How many fingers does a nine-fingered man have?");
+        System.out.println(fingers);
+        System.out.println("What does fiona's husband's name start with?");
+        System.out.println(shrek);
+        System.out.println("How many seconds is in an hour?");
+        System.out.println(seconds);
+        System.out.println("How many cookies does the average american eat in a lifetime?");
+        System.out.println(cookies);
+        System.out.println("How many cookies do 100000000000000 people eat in their lifetimes combined?");
+        System.out.println(cookies2);
+        System.out.println("What is 1 divided by 4?");
+        System.out.println(twentyFivePercent);
+        System.out.println("What is 1 divided by 3?");
+        System.out.println(oneDividedBy3Extended);
+
+
         
-        System.out.println("Enter a number 1-5 to hear a fact about dogs");
-        int number = input.nextInt();
-
-        if (number == 1) {
-            System.out.println("3 dogs survived the sinking of the titanic.");
-        }
-        if (number == 2) {
-            System.out.println("A bloodhound's sense of smell can be used as evidence in court.");
-        }
-        if (number == 3) {
-            System.out.println("Dogs have 3 eyelids");
-        }
-        if (number == 4) {
-            System.out.println("a dog's nose print is as unique as a human fingerprint");
-        }
-        if (number == 5) {
-            System.out.println("when dogs curl up, it's not only to keep warm, but also to protect vital organs.");
-        }
-
+        
 
     } 
 }
