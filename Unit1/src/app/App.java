@@ -1,14 +1,16 @@
 package app;
-
+import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        int number = (42);
+        
+        Scanner input = new Scanner(System.in);
+        
         System.out.println("Guess the number!");
-        int answer = input.nextLine();
+        int answer = input.nextInt();
+       
         if (answer == 42){
             System.out.println("Correct!");
-
         }
         if (answer < 42){
             System.out.println("Higher");
