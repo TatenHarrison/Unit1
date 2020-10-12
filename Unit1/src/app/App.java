@@ -5,24 +5,22 @@ public class App {
     public static void main(String[] args) throws Exception {
         
         Scanner input = new Scanner(System.in);
+        System.out.println("Enter a number");
+        int numberOne = input.nextInt();
+        System.out.println("Enter another number");
+        int numberTwo = input.nextInt();
+
+        while (numberOne <= numberTwo) {
+            System.out.println(numberOne);
+            numberOne = numberOne + 2;
+        }
+
+      
+
         
-        System.out.println("Guess the number!");
-        int answer = input.nextInt();
-       
-        if (answer == 42){
-            System.out.println("Correct!");
-        }
-        if (answer < 42){
-            System.out.println("Higher");
-        }
-        if (answer > 42){
-            System.out.println("Lower");
-        }
+        
+
+        
     }
-        
-        
-
-        
-
     
 }
