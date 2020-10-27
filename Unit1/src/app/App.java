@@ -4,9 +4,6 @@ import java.util.Random;
 
 public class App {
     public static void main(String[] args) throws Exception {      
-       
-        int chips = 100;
-
         Scanner input = new Scanner(System.in);
         
         System.out.println("Would you like to make an inside or outside bet?");
@@ -72,18 +69,18 @@ public class App {
                     int bet4 = input.nextInt();
                     System.out.println("You will bet $" + bet4 + " on black.");
 
+                    int black[] = {2, 4, 6, 8, 10, 11, 13, 15, 17, 20, 22, 24, 26, 28, 29, 31, 33, 35};
                     Random rnd = new Random();
                     int n4 = rnd.nextInt(37);
-                    System.out.println("The number was " + n4 + ".");
-                }
-         }
-         System.out.println("Would you like to spin again?");
-         String again = input.nextLine();
-         if (again.equals("yes")){
+                    for (int b = 0; b < black.length; b++){
+                        if (n4 == black[b]){
+                            System.out.println("The number was " + n4 + ".");
+                            System.out.println("You win!");
+                        }
+                    }
 
-         }
-         else{
-             System.out.println("You cashed out with $" + chips + ".");
+                    
+                }
          }
 
 
