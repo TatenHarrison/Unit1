@@ -1,90 +1,82 @@
 package app;
+
 import java.util.Scanner;
 import java.util.Random;
 
 public class App {
-    public static void main(String[] args) throws Exception {      
+    public static void main(String[] args) throws Exception {
         Scanner input = new Scanner(System.in);
-        
-        System.out.println("Would you like to make an inside or outside bet?");
-        String inOrOut = input.nextLine();
+        int bets = 10;
+        boolean retrybet = false;
+        int insideNum;
+        int bet1;
+        String outsideChoice;
+        int bet2;
+        int bet3;
+        int bet4;
 
-        if (inOrOut.equals("inside")){
-            System.out.println("What number would you like to bet on?");
-            int insideNum = input.nextInt();
-            System.out.println("How much would you like to bet?");
-            int bet1 = input.nextInt();
-            System.out.println("You will bet $" + bet1 + " on " + insideNum + ".");
+        int betss[] = new int[10];
+        String betType[] = {"even", "odd", "red", "black"}
 
-            Random rnd = new Random();
-            int n1 = rnd.nextInt(37);
 
-            System.out.println("The number was " + n1 + ".");
-            if (n1 == bet1){
-                System.out.println("Your bet was correct!");
-            }
-            else{
-                System.out.println("Your bet on " + bet1 + " was incorrect...");
+         for (int i = 0;i < betss.length; i++){
+            if (retrybet == false) {
+                System.out.println("Would you like to make an inside or outside bet?");
+                String inOrOut = input.nextLine();
+                int black[] = { 2, 4, 6, 8, 10, 11, 13, 15, 17, 20, 22, 24, 26, 28, 29, 31, 33, 35 };
+                int red[] = { 1, 3, 5, 7, 9, 12, 14, 16, 18, 19, 21, 23, 25, 27, 30, 32, 34, 36 };
+
+                if (inOrOut.equals("inside")) {
+                    System.out.println("What number would you like to bet on?");
+                    insideNum = input.nextInt();
+                    System.out.println("How much would you like to bet?");
+                    betss[i] = input.nextInt();
+                    System.out.println("You will bet $" + betss[i] + " on " + insideNum + ".");
+
+                }
+                if (inOrOut.equals("outside")) {
+                    System.out.println("Would you like to bet on even, odd, black, or red?");
+                    outsideChoice = input.nextLine();
+
+                    if (outsideChoice.equals("even")) {
+                        System.out.println("How much would you like to bet?");
+                        betss[i] = input.nextInt();
+                        System.out.println("You will bet $" + betss[i] + " on even.");
+
+                    }
+                    if (outsideChoice.equals("odd")) {
+                        System.out.println("How much would you like to bet?");
+                        betss[i] = input.nextInt();
+                        System.out.println("You will bet $" + betss[i] + " on odd.");
+
+                    }
+                    if (outsideChoice.equals("black")) {
+                        System.out.println("How much would you like to bet?");
+                        betss[i] = input.nextInt();
+                        System.out.println("You will bet $" + betss[i] + " on black.");
+
+                    }
+
+                }
+                System.out.println("Would you like to make another bet?");
+                String retry = input.nextLine();
+                if (retry.equals("no")) {
+                    retrybet = true;
+                }
+            
             }
         }
-        if (inOrOut.equals("outside")){
-                System.out.println("Would you like to bet on even, odd, black, or red?");
-                String outsideChoice = input.nextLine();
+        if (retrybet == true){
+            for ( int i = 0; i < betss.length; i++){
+                System.out.println("You bet " + betss[i] + "on ");
+            }
+        Random rnd = new Random();
+        int n1 = rnd.nextInt(37);
+        System.out.println("The number was " + n1 + ".");
+        }
+        
+        
 
-                if (outsideChoice.equals("even")){
-                    System.out.println("How much would you like to bet?");
-                    int bet2 = input.nextInt();
-                    System.out.println("You will bet $" + bet2 + " on even.");
-
-                    Random rnd = new Random();
-                    int n2 = rnd.nextInt(37);
-                    System.out.println("The number was " + n2 + ".");
-
-                    if (n2 % 2 == 0){
-                        System.out.println("Your bet was correct!");
-                    }
-                    else{
-                        System.out.println("Your bet on even was incorrect...");
-                     }
-                    }
-                if (outsideChoice.equals("odd")){
-                    System.out.println("How much would you like to bet?");
-                    int bet3 = input.nextInt();
-                    System.out.println("You will bet $" + bet3 + " on odd.");
-
-                    Random rnd = new Random();
-                    int n3 = rnd.nextInt(37);
-                    System.out.println("The number was " + n3 + ".");
-
-                    if (n3 % 2 == 0){
-                        System.out.println("Your bet was incorrect...");
-                    }
-                    else{
-                        System.out.println("Your bet was correct!");
-                    }
-
-                }
-                if (outsideChoice.equals("black")){
-                    System.out.println("How much would you like to bet?");
-                    int bet4 = input.nextInt();
-                    System.out.println("You will bet $" + bet4 + " on black.");
-
-                    int black[] = {2, 4, 6, 8, 10, 11, 13, 15, 17, 20, 22, 24, 26, 28, 29, 31, 33, 35};
-                    Random rnd = new Random();
-                    int n4 = rnd.nextInt(37);
-                    for (int b = 0; b < black.length; b++){
-                        if (n4 == black[b]){
-                            System.out.println("The number was " + n4 + ".");
-                            System.out.println("You win!");
-                        }
-                    }
-
-                    
-                }
-         }
-
-
-         
     }
-    
+
 }
